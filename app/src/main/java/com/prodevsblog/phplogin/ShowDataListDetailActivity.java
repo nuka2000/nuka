@@ -95,6 +95,15 @@ public class ShowDataListDetailActivity extends AppCompatActivity {
             String pemegang = c.getString(URLS.TAG_PEMEGANG);
             String jenis = c.getString(URLS.TAG_JENIS_RAN);
             String foto  = c.getString(URLS.TAG_IMAGE);
+            String noreg_lama =c.getString(URLS.TAG_NOREG_LAMA);
+            String no_mesin  =c.getString(URLS.TAG_NO_MESIN);
+            String tipe = c.getString(URLS.TAG_TIPE);
+            String merek = c.getString(URLS.TAG_MEREK);
+            String kubikasi = c.getString(URLS.TAG_KUBIKASI);
+            String tahun = c.getString(URLS.TAG_TAHUN);
+            String kondisi = c.getString(URLS.TAG_KONDISI);
+            String bahan_bakar = c.getString(URLS.TAG_BAHAN_BAKAR);
+
             if(foto == null || foto == "" || foto.length()==0 || foto == "null"){
                 Picasso.get().load(URLS.URL_GET_GAMBAR+"no_gambar.jpg").into((ImageView)findViewById(R.id.app_bar_image)) ;
             } else {
@@ -104,6 +113,16 @@ public class ShowDataListDetailActivity extends AppCompatActivity {
             jenisV.setText(jenis);
             pemegangV.setText(pemegang);
             no_rangkaV.setText(norangka);
+
+            reg_lamaV.setText(noreg_lama);
+            no_mesinV.setText(no_mesin);
+            tipeV.setText(tipe);
+            merekV.setText(merek);
+            kubikasiV.setText(kubikasi);
+            tahunV.setText(tahun);
+            kondisiV.setText(kondisi);
+            bahan_bakarV.setText(bahan_bakar);
+
         }
         catch (JSONException e) {
             e.printStackTrace();
