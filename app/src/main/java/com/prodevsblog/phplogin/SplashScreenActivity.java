@@ -83,6 +83,7 @@ public class SplashScreenActivity extends AppCompatActivity {
             }
         } catch (JSONException e) {
             e.printStackTrace();
+            
         }
     }
 }
