@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Randis TNI</string>
+    <string name="cari_by_noran">XXXX-XX</string>
+    <string name="scan_qr_code">Scan QR Code</string>
+    <string name="cari_detail">Cari Detail</string>
+    <string name="cari">Cari</string>
+    <string name="tampil_semua_data">Tampil Semua Data</string>
+</resources>

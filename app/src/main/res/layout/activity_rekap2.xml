@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#ddd"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/android_card_view_example2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+               app:cardCornerRadius="10dp"
+                android:layout_marginTop="16dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#fff"
+                    android:elevation="4dp"
+
+                    android:padding="16dp">
+
+                    <TextView
+                        android:id="@+id/cardview_list_title2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_centerHorizontal="true"
+                        android:background="#0F2186"
+                        android:textColor="@color/backgroundcolor"
+                        android:paddingBottom="5dp"
+                        android:text="  JUMLAH KENDARAAN  "
+
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/sd_mobil"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/cardview_list_title2"
+                        android:paddingTop="10dp"
+                        android:text="Mobil :"
+                        android:layout_centerHorizontal="true"
+                        android:textColor="#B80F0F"
+                        android:textSize="34sp" />
+
+                </RelativeLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/android_card_view_example3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="10dp"
+                android:layout_marginTop="16dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#fff"
+                    android:elevation="4dp"
+
+                    android:padding="16dp">
+
+                    <TextView
+                        android:id="@+id/cardview_list_title3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:paddingBottom="5dp"
+                        android:background="#0F2186"
+                        android:textColor="@color/backgroundcolor"
+                        android:text="  KONDISI  "
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/sd_baik"
+                        android:textSize="16sp"
+                        android:paddingTop="10dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/cardview_list_title3"
+                        android:text="Baik :"
+                        android:textColor="#8b8b8b" />
+
+                    <TextView
+                        android:id="@+id/sd_rr"
+                        android:textSize="16sp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/sd_baik"
+                        android:text="Rusak Ringan :"
+                        android:textColor="#8b8b8b" />
+
+                    <TextView
+                        android:id="@+id/sd_rb"
+                        android:textSize="16sp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/sd_rr"
+                        android:text="Rusak Berat :"
+                        android:textColor="#8b8b8b" />
+                </RelativeLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/android_card_view_example77"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="10dp"
+                android:layout_marginTop="16dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#fff"
+                    android:elevation="4dp"
+
+                    android:padding="16dp">
+
+                    <TextView
+                        android:id="@+id/cardview_list_title177"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:paddingBottom="5dp"
+                        android:background="#0F2186"
+                        android:textColor="@color/backgroundcolor"
+                        android:text="  BAHAN BAKAR  "
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/sd_ron88"
+                        android:textSize="16sp"
+                        android:paddingTop="10dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/cardview_list_title177"
+                        android:text="Ron 88: "
+                        android:textColor="#8b8b8b" />
+
+                    <TextView
+                        android:id="@+id/sd_ron92"
+                        android:textSize="16sp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/sd_ron88"
+                        android:text="Ron 92: "
+                        android:textColor="#8b8b8b" />
+
+                    <TextView
+                        android:id="@+id/sd_hsd"
+                        android:textSize="16sp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/sd_ron92"
+                        android:text="HSD :"
+                        android:textColor="#8b8b8b" />
+
+                </RelativeLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/android_card_view_example1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="@dimen/cardview_compat_inset_shadow"
+                android:layout_marginTop="16dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#fff"
+                    android:elevation="4dp"
+
+                    android:padding="16dp">
+
+                    <TextView
+                        android:id="@+id/cardview_list_title1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:paddingBottom="5dp"
+                        android:background="#0F2186"
+                        android:textColor="@color/backgroundcolor"
+                        android:text="  TAHUN RAN  "
+                        android:textSize="20sp" />
+
+                    <TextView
+                    android:id="@+id/sd_2000"
+                        android:textSize="16sp"
+                        android:paddingTop="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/cardview_list_title1"
+                    android:text="Tahun 2000 Kebawah : "
+                    android:textColor="#8b8b8b" />
+
+                    <TextView
+                    android:id="@+id/sd_2010"
+                        android:textSize="16sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/sd_2000"
+                    android:text="Tahun 2000-2010 : "
+                    android:textColor="#8b8b8b" />
+
+                    <TextView
+                        android:id="@+id/sd_2019"
+                        android:textSize="16sp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/sd_2010"
+                        android:text="Tahun 2010-2019 : "
+                        android:textColor="#8b8b8b" />
+
+                </RelativeLayout>
+
+            </android.support.v7.widget.CardView>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>
