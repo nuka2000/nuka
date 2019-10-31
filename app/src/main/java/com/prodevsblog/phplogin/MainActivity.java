@@ -95,11 +95,11 @@ public class MainActivity extends AppCompatActivity {
                 String pemegang = c.getString(URLS.TAG_PEMEGANG);
                 String jenis = c.getString(URLS.TAG_JENIS_RAN);
                 Toast.makeText(getApplicationContext(),""+noreg+"", Toast.LENGTH_SHORT).show();
-                Intent intentObj = new Intent(this, DataActivityNew.class);
-               intentObj.putExtra("FOTO", foto);
-                intentObj.putExtra("NOREG", noreg);
-               intentObj.putExtra("PEMEGANG", pemegang);
-               intentObj.putExtra("JENIS", jenis);
+                Intent intentObj = new Intent(this, ShowDataListDetailActivity.class);
+//               intentObj.putExtra("FOTO", foto);
+                intentObj.putExtra("NOMOR", noreg);
+//               intentObj.putExtra("PEMEGANG", pemegang);
+//               intentObj.putExtra("JENIS", jenis);
                 startActivity(intentObj);
             }
         } catch (JSONException e) {

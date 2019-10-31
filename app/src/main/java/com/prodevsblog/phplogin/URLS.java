@@ -33,4 +33,13 @@ public class URLS {
     public static final String TAG_total = "total";
     public static final String TAG_KONDISI = "kondisi";
     public static final String TAG_BAHAN_BAKAR = "bahan_bakar";
+    public static final String TAG_NOREG_LAMA = "noreg_lama";
+    public static final String TAG_NO_MESIN = "no_mesin";
+    public static final String TAG_TIPE= "type";
+    public static final String TAG_MEREK = "merek";
+    public static final String TAG_KUBIKASI = "kubikasi";
+    public static final String TAG_TAHUN = "tahun";
+
+
+
 }
