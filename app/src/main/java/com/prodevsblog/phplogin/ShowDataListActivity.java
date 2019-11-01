@@ -28,6 +28,7 @@ public class ShowDataListActivity extends AppCompatActivity implements AdapterVi
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getSupportActionBar().hide();
         setContentView(R.layout.activity_show_data_list);
         Intent intent = getIntent();
         Bundle extras = intent.getExtras();

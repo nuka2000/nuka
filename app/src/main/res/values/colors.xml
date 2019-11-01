@@ -2,18 +2,20 @@
 <resources>
     <color name="colorPrimary">#FFC107</color>
     <color name="colorPrimaryDark">#FFA000</color>
-    <color name="backgroundcolor">#fcfcfc</color>
+    <color name="backgroundcolor">#FCFCFC</color>
     <color name="lightgray2">#CBD8DF</color>
-    <color name="lightgray">#ededed</color>
+    <color name="lightgray">#EDEDED</color>
     <color name="deeppurple">#7c4dff</color>
     <color name="yello">#FFEB3B</color>
     <color name="green">#A17713</color>
     <color name="colorAccent">#FF4081</color>
-    <color name="darkblue">#23283a</color>
+    <color name="darkblue">#23283A</color>
     <color name="testcolorblue">#152b38</color>
-    <color name="pink">#fe104d</color>
+    <color name="pink">#FE104D</color>
     <color name="red">#E60505</color>
 
     <color name="black_overlay">#66000000</color>
     <color name="bluelangit">#03A9F4</color>
+    <color name="kuning1">#E65C00</color>
+    <color name="kuning2">#F9D423</color>
 </resources>

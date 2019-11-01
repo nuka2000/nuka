@@ -23,6 +23,7 @@ public class ShowDataListDetailActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getSupportActionBar().hide();
         setContentView(R.layout.activity_show_data_list_details);
         query_search = getIntent().getStringExtra("NOMOR");
         //Toast.makeText(getApplicationContext(),"Pencarian Data", Toast.LENGTH_SHORT).show();
@@ -106,7 +107,7 @@ public class ShowDataListDetailActivity extends AppCompatActivity {
             String bahan_bakar = c.getString(URLS.TAG_BAHAN_BAKAR);
 
             if(foto == null || foto == "" || foto.length()==0 || foto == "null"){
-                Picasso.get().load(URLS.URL_GET_GAMBAR+"no_gambar.jpg").into((ImageView)findViewById(R.id.app_bar_image)) ;
+                Picasso.get().load(URLS.URL_GET_GAMBAR+"no_gambar.png").into((ImageView)findViewById(R.id.app_bar_image)) ;
             } else {
                 Picasso.get().load(URLS.URL_GET_GAMBAR+foto).into((ImageView)findViewById(R.id.app_bar_image)) ;
             }
@@ -123,7 +124,7 @@ public class ShowDataListDetailActivity extends AppCompatActivity {
             tahunV.setText(tahun);
             kondisiV.setText(kondisi);
             bahan_bakarV.setText(bahan_bakar);
-            gabunganV.setText(jenis+" "+tipe+" "+merek);
+            gabunganV.setText(jenis+" "+merek+" "+tipe);
 
         }
         catch (JSONException e) {
