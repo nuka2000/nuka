@@ -107,7 +107,7 @@ public class ShowDataListDetailActivity extends AppCompatActivity {
             String bahan_bakar = c.getString(URLS.TAG_BAHAN_BAKAR);
 
             if(foto == null || foto == "" || foto.length()==0 || foto == "null"){
-                Picasso.get().load(URLS.URL_GET_GAMBAR+"no_gambar.png").into((ImageView)findViewById(R.id.app_bar_image)) ;
+                Picasso.get().load(URLS.URL_GET_GAMBAR+"no_image.png").into((ImageView)findViewById(R.id.app_bar_image)) ;
             } else {
                 Picasso.get().load(URLS.URL_GET_GAMBAR+foto).into((ImageView)findViewById(R.id.app_bar_image)) ;
             }
