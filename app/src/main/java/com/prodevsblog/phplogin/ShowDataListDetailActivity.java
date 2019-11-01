@@ -18,26 +18,27 @@ import org.json.JSONObject;
 public class ShowDataListDetailActivity extends AppCompatActivity {
 
     public String query_search;
-    public TextView noregV,pemegangV, jenisV, reg_lamaV,no_mesinV,tipeV,merekV,kubikasiV,tahunV,kondisiV,bahan_bakarV, no_rangkaV;
+    public TextView noregV,pemegangV, jenisV, reg_lamaV,no_mesinV,tipeV,merekV,kubikasiV,tahunV,kondisiV,bahan_bakarV, no_rangkaV, gabunganV;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_show_data_list_detail);
+        setContentView(R.layout.activity_show_data_list_details);
         query_search = getIntent().getStringExtra("NOMOR");
         //Toast.makeText(getApplicationContext(),"Pencarian Data", Toast.LENGTH_SHORT).show();
         noregV = findViewById(R.id.id_asdld_reg_baru);
         pemegangV = findViewById(R.id.id_asdld_pemegang);
-        jenisV = findViewById(R.id.id_asdld_jenis);
+        //jenisV = findViewById(R.id.id_asdld_jenis);
         reg_lamaV = findViewById(R.id.id_asdld_reg_lama);
         no_mesinV = findViewById(R.id.id_asdld_no_mesin);
-        tipeV = findViewById(R.id.id_asdld_tipe);
-        merekV = findViewById(R.id.id_asdld_merek);
+       // tipeV = findViewById(R.id.id_asdld_tipe);
+       // merekV = findViewById(R.id.id_asdld_merek);
         kubikasiV = findViewById(R.id.id_asdld_kubikasi);
         tahunV = findViewById(R.id.id_asdld_tahun);
         kondisiV = findViewById(R.id.id_asdld_kondisi);
         bahan_bakarV = findViewById(R.id.id_asdld_bahan_bakar);
         no_rangkaV = findViewById(R.id.id_asdld_no_rangka);
+        gabunganV = findViewById(R.id.id_asdld_gabungan);
 
         getJSONDetail();
     }
@@ -110,18 +111,19 @@ public class ShowDataListDetailActivity extends AppCompatActivity {
                 Picasso.get().load(URLS.URL_GET_GAMBAR+foto).into((ImageView)findViewById(R.id.app_bar_image)) ;
             }
             noregV.setText(noreg);
-            jenisV.setText(jenis);
+           // jenisV.setText(jenis);
             pemegangV.setText(pemegang);
             no_rangkaV.setText(norangka);
 
             reg_lamaV.setText(noreg_lama);
             no_mesinV.setText(no_mesin);
-            tipeV.setText(tipe);
-            merekV.setText(merek);
+           // tipeV.setText(tipe);
+            //merekV.setText(merek);
             kubikasiV.setText(kubikasi);
             tahunV.setText(tahun);
             kondisiV.setText(kondisi);
             bahan_bakarV.setText(bahan_bakar);
+            gabunganV.setText(jenis+" "+tipe+" "+merek);
 
         }
         catch (JSONException e) {
