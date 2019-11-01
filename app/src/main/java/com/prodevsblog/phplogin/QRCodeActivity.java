@@ -42,9 +42,9 @@ public class QRCodeActivity extends AppCompatActivity implements ZXingScannerVie
         // If you would like to resume scanning, call this method below:
         mScannerView.resumeCameraPreview(this);
 
-        Intent intentObj = new Intent(this, DataActivityQR.class);
+        Intent intentObj = new Intent(this, ShowDataListDetailActivity.class);
         intentObj.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-        intentObj.putExtra("QUERY_SEARCHQR", result.getText());
+        intentObj.putExtra("NOMOR", result.getText());
         startActivity(intentObj);
     }
 
