@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.AsyncTask;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.StrictMode;
@@ -83,7 +84,10 @@ public class SplashScreenActivity extends AppCompatActivity {
             }
         } catch (JSONException e) {
             e.printStackTrace();
+            Toast.makeText(getApplicationContext(),"No Internet Connection", Toast.LENGTH_LONG).show();
+            ExitActivity.exitApplication(SplashScreenActivity.this);
             
         }
     }
+
 }
