@@ -3,6 +3,7 @@ package com.prodevsblog.phplogin;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ExpandableListAdapter;
 import android.widget.ExpandableListView;
@@ -11,6 +12,8 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class ExpendableListActivity extends AppCompatActivity {
 
@@ -20,6 +23,8 @@ public class ExpendableListActivity extends AppCompatActivity {
     HashMap<String, List<String>> expandableListDetail;
 
     public Intent intentObj;
+    private Timer timer;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -85,4 +90,59 @@ public class ExpendableListActivity extends AppCompatActivity {
         });
     }
 
+
+    void MulaiWaktu(){
+
+        timer = new Timer();
+        Log.i("Main", "Invoking logout timer");
+        ExpendableListActivity.LogOutTimerTask logoutTimeTask = new ExpendableListActivity.LogOutTimerTask();
+        timer.schedule(logoutTimeTask, URLS.TAG_TIMER); //auto logout in 30 second
+
+    }
+
+    void BerhentiWaktu(){
+
+        if (timer != null) {
+            timer.cancel();
+            Log.i("Main", "cancel timer");
+            timer = null;
+        }
+    }
+
+    @Override
+    public void onUserInteraction() {
+        super.onUserInteraction();
+        BerhentiWaktu();
+        MulaiWaktu();
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+
+        BerhentiWaktu();
+
+
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        MulaiWaktu();
+
+    }
+
+    private class LogOutTimerTask extends TimerTask {
+
+        @Override
+        public void run() {
+
+            //redirect user to login screen
+            Intent i = new Intent(ExpendableListActivity.this, LoginActivity.class);
+            i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            i.putExtra("TIMEOUT", "Y");
+            startActivity(i);
+            finish();
+        }
+    }
 }

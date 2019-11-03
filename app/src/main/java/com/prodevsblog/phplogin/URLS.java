@@ -40,6 +40,7 @@ public class URLS {
     public static final String TAG_KUBIKASI = "kubikasi";
     public static final String TAG_TAHUN = "tahun";
 
+    public static final int TAG_TIMER=30000;
 
 
 }

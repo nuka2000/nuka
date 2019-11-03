@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListAdapter;
@@ -18,12 +19,15 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class ShowDataListActivity extends AppCompatActivity implements AdapterView.OnItemClickListener{
 
     public String childP;
     private ListView listView;
     private String JSON_STRING;
+    private Timer timer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -127,5 +131,60 @@ public class ShowDataListActivity extends AppCompatActivity implements AdapterVi
         Intent intentObj = new Intent(ShowDataListActivity.this,ShowDataListDetailActivity.class);
         intentObj.putExtra("NOMOR", nomor);
         startActivity(intentObj);
+    }
+
+    void MulaiWaktu(){
+
+        timer = new Timer();
+        Log.i("Main", "Invoking logout timer");
+        ShowDataListActivity.LogOutTimerTask logoutTimeTask = new ShowDataListActivity.LogOutTimerTask();
+        timer.schedule(logoutTimeTask, URLS.TAG_TIMER); //auto logout in 30 second
+
+    }
+
+    void BerhentiWaktu(){
+
+        if (timer != null) {
+            timer.cancel();
+            Log.i("Main", "cancel timer");
+            timer = null;
+        }
+    }
+
+    @Override
+    public void onUserInteraction() {
+        super.onUserInteraction();
+        BerhentiWaktu();
+        MulaiWaktu();
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+
+        BerhentiWaktu();
+
+
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        MulaiWaktu();
+
+    }
+
+    private class LogOutTimerTask extends TimerTask {
+
+        @Override
+        public void run() {
+
+            //redirect user to login screen
+            Intent i = new Intent(ShowDataListActivity.this, LoginActivity.class);
+            i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            i.putExtra("TIMEOUT", "Y");
+            startActivity(i);
+            finish();
+        }
     }
 }

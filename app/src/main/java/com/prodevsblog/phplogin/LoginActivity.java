@@ -19,16 +19,29 @@ public class LoginActivity extends AppCompatActivity {
 
     EditText editTextUsername, editTextPassword;
 
+    public String habis_waktu;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+
+        if(getIntent()!=null && getIntent().getExtras()!=null){
+            Bundle bundle = getIntent().getExtras();
+            if(!bundle.getString("TIMEOUT").equals(null)){
+                Toast.makeText(getApplicationContext(),"Session Timeout", Toast.LENGTH_SHORT).show();
+            }
+        }
+
         init();
+
     }
     void init(){
+
         editTextUsername = findViewById(R.id.editTextUsername);
         editTextPassword = findViewById(R.id.editTextPassword);
+
         //if user presses on login calling the method login
         findViewById(R.id.buttonLogin).setOnClickListener(new View.OnClickListener() {
             @Override
