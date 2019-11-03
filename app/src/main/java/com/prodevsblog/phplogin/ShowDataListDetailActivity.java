@@ -1,15 +1,23 @@
 package com.prodevsblog.phplogin;
 
+import android.app.Dialog;
 import android.app.ProgressDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.drawable.ColorDrawable;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.view.ViewGroup;
+import android.view.Window;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.ceylonlabs.imageviewpopup.ImagePopup;
 import com.squareup.picasso.Picasso;
 
 import org.json.JSONArray;
@@ -141,8 +149,8 @@ public class ShowDataListDetailActivity extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-        Intent intent = new Intent(this, MainActivity.class);
-        startActivity(intent);
+//        Intent intent = new Intent(this, MainActivity.class);
+//        startActivity(intent);
         finish();
     }
 
@@ -200,5 +208,16 @@ public class ShowDataListDetailActivity extends AppCompatActivity {
             startActivity(i);
             finish();
         }
+    }
+
+    public void LihatGambar(View view){
+
+
+        final ImagePopup imagePopup = new ImagePopup(this);
+        imagePopup.setImageOnClickClose(true);
+        ImageView imageView =  findViewById(R.id.app_bar_image);
+        imagePopup.initiatePopup(imageView.getDrawable());
+        imagePopup.viewPopup();
+
     }
 }
